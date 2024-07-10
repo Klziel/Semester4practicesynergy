@@ -1,0 +1,90 @@
+class Student:
+    def __init__(self, name, age, average_grade):
+        self._name = name
+        self._age = age
+        self._average_grade = average_grade
+
+    # Getters and Setters for Name
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        self._name = value
+
+    # Getters and Setters for Age
+    @property
+    def age(self):
+        return self._age
+
+    @age.setter
+    def age(self, value):
+        self._age = value
+
+    # Getters and Setters for Average Grade
+    @property
+    def average_grade(self):
+        return self._average_grade
+
+    @average_grade.setter
+    def average_grade(self, value):
+        self._average_grade = value
+
+    # Method to display student information
+    def display_info(self):
+        print(f"Name: {self._name}, Age: {self._age}, Average Grade: {self._average_grade}")
+
+    # Method to evaluate student's performance based on average grade
+    def evaluate_performance(self):
+        if self._average_grade > 8:
+            return "Excellent"
+        elif 6 <= self._average_grade <= 8:
+            return "Good"
+        elif 4 <= self._average_grade < 6:
+            return "Satisfactory"
+        else:
+            return "Poor"
+
+    # Additional method to check if student is an adult
+    def is_adult(self):
+        return self._age >= 18
+
+    # Additional method to increment age by 1
+    def increment_age(self):
+        self._age += 1
+
+# Creating student objects and demonstrating their use
+student1 = Student("Alice", 20, 9.1)
+student2 = Student("Bob", 17, 7.5)
+student3 = Student("Charlie", 22, 5.8)
+
+# Setting values
+student1.age = 21
+student2.average_grade = 8.0
+student3.name = "Charlie Brown"
+
+# Displaying information about students
+student1.display_info()
+student2.display_info()
+student3.display_info()
+
+# Evaluating performance of students
+print(f"{student1.name}'s performance: {student1.evaluate_performance()}")
+print(f"{student2.name}'s performance: {student2.evaluate_performance()}")
+print(f"{student3.name}'s performance: {student3.evaluate_performance()}")
+
+# Checking if students are adults
+print(f"Is {student1.name} an adult? {'Yes' if student1.is_adult() else 'No'}")
+print(f"Is {student2.name} an adult? {'Yes' if student2.is_adult() else 'No'}")
+print(f"Is {student3.name} an adult? {'Yes' if student3.is_adult() else 'No'}")
+
+# Incrementing age of students
+student1.increment_age()
+student2.increment_age()
+student3.increment_age()
+
+# Displaying updated information
+student1.display_info()
+student2.display_info()
+student3.display_info()
